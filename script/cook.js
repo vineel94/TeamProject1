@@ -3,16 +3,19 @@ $(document).ready(function(){
 
 $("#search-recipe-btn").on("click", function (event){
     event.preventDefault();
-    var recipeSearchInput = $(this).text();
+    var recipeSearchInput = $("#dish-input").val();
+    console.log(recipeSearchInput);
+    recipeSearchInput += ", " + $("#ingredient-input").val();
+    // recipeSearchInput = $(this).text();
     console.log(recipeSearchInput);
 
-    var queryURL = "https://food2fork.com/api/search?q=" + recipeSearchInput + "&key=7cd47955dffd41deaec51a869580847a";
+    var queryURL = "http://cors-proxy.htmldriven.com/?url=https://food2fork.com/api/search?key=7cd47955dffd41deaec51a869580847a&q="+recipeSearchInput;
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response){
-        var searchResult = JSON.parse(response);
+        var searchResult = JSON.stringify(response);
         console.log(searchResult);
     
         for(i=0; i<searchResult.recipes.lenght; i++){
