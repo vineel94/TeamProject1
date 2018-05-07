@@ -1,0 +1,28 @@
+.nav-item > a {
+    color: whitesmoke;
+}
+.footer {
+    background-color: #ffebcc; 
+    text-align: center;
+}
+#search-recipe-btn {
+    margin-top: 10px;
+    background-color: #92B558;
+    border: 1px solid #92B558;
+
+}
+#top-recipe-btn {
+    margin-top: 10px;
+    background-color: #92B558;
+    border: 1px solid #92B558; 
+}
+.card-header {
+    background-color:  #92B558;
+    color: whitesmoke;
+
+}
+.card {
+    border: 1px solid  #92B558;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
