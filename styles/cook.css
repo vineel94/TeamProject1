@@ -1,3 +1,12 @@
+html, body{
+    height: 100%;
+}
+
+#containers{
+    min-height: 100%;
+    position: relative;
+}
+
 .nav-item > a {
     color: whitesmoke;
 }
@@ -25,4 +34,10 @@
     border: 1px solid  #92B558;
     margin-top: 32px;
     margin-bottom: 32px;
+}
+
+.footer{
+    bottom: -30px;
+    position: absolute;
+    width: 100%;
 }
