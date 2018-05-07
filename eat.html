@@ -44,28 +44,28 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="card-title">Make a Delicious Meal At Home</h2>
-                        <h3>Find a Recipe</h3>
+                        <h2 class="card-title">Find a Delicious Meal on the Streets</h2>
+                        <h3>Input your city!</h3>
                     </div>
                     <div class="card-body">
                         <form>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <label for="dish-input">Dish Type</label>
-                                    <input type="text" class="form-control" id="dish-input">
+                                    <label for="cities-input">City</label>
+                                    <input type="text" class="form-control" id="cities-input">
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="ingredient-input">Ingredient</label>
+                                    <label for="ingredient-input">Cuisine</label>
                                     <input type="text" class="form-control" id="ingredient-input">
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="cuisine-input">Cuisine</label>
+                                    <label for="cuisine-input">Price Range</label>
                                     <input type="text" class="form-control" id="cuisine-input">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <button class="btn btn-primary btn-lg fas fa-utensil-spoon" id="search-recipe-btn" type="submit"> Search</button>
+                                    <button class="btn btn-primary btn-lg fas fa-utensil-spoon" id="find" type="submit"> Search</button>
                                 </div>
                                 <div class="col-md-6">
                                     <button class="btn btn-primary btn-lg far fa-star" id="top-recipe-btn" type="submit"> Trending</button>
@@ -80,7 +80,8 @@
                     <div class="card-header">
                         <h3 class="card-title">Results</h3>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" id ="holder" >
+                                 
 
                     </div>
                 </div>
@@ -98,7 +99,7 @@
     </footer>
 </div>
 
-    <script src="script/cook.js"></script>
+    <script src="script/eat.js"></script>
 </body>
 
 </html>
