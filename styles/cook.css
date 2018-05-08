@@ -11,16 +11,16 @@ html, body{
     color: whitesmoke;
 }
 .footer {
-    background-color: #ffebcc; 
+    background-color: #92B558; 
     text-align: center;
 }
-#search-recipe-btn {
+#search-btn {
     margin-top: 10px;
     background-color: #92B558;
     border: 1px solid #92B558;
 
 }
-#top-recipe-btn {
+#top-search-btn {
     margin-top: 10px;
     background-color: #92B558;
     border: 1px solid #92B558; 
