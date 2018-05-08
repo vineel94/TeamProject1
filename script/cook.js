@@ -15,7 +15,7 @@ $(document).ready(function () {
 
         // var queryURL = "http://cors-proxy.htmldriven.com/?url=http://food2fork.com/api/search?key=7cd47955dffd41deaec51a869580847a&q=" + recipeSearchInput;
 
-        var queryURL = "http://food2fork.com/api/search?key=7cd47955dffd41deaec51a869580847a&q=" + recipeSearchInput;
+        var queryURL = "https://food2fork.com/api/search?key=7cd47955dffd41deaec51a869580847a&q=" + recipeSearchInput;
 
 
 
