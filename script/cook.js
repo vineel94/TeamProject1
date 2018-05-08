@@ -10,12 +10,13 @@ $(document).ready(function () {
 
         if($("#cuisine-input").val())
             recipeSearchInput += "," + $("#cuisine-input").val();
-            
+
         console.log(recipeSearchInput);
 
-        var queryURL = "http://cors-proxy.htmldriven.com/?url=http://food2fork.com/api/search?key=7cd47955dffd41deaec51a869580847a&q=" + recipeSearchInput;
+        // var queryURL = "http://cors-proxy.htmldriven.com/?url=http://food2fork.com/api/search?key=7cd47955dffd41deaec51a869580847a&q=" + recipeSearchInput;
 
-        
+        var queryURL = "http://food2fork.com/api/search?key=7cd47955dffd41deaec51a869580847a&q=" + recipeSearchInput;
+
 
 
         $.ajax({
