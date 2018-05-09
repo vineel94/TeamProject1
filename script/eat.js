@@ -1,6 +1,5 @@
 // This .on("click") function will trigger the AJAX Call
 $("#find").on("click", function(event) {
-  console.log("test");
   // event.preventDefault() can be used to prevent an event's default behavior.
   // Here, it prevents the submit button from trying to submit a form when clicked
   event.preventDefault();
@@ -9,9 +8,7 @@ $("#find").on("click", function(event) {
   // Here we construct our URL
   var queryURL = "https://developers.zomato.com/api/v2.1/cities?q=" + cities;
 
-  // Write code between the dashes below to hit the queryURL with $ajax, then take the response data
-  // and display it in the div with an id of movie-view
-  // ------YOUR CODE GOES IN THESE DASHES. DO NOT MANUALLY EDIT THE HTML ABOVE.
+
   $.ajax({
     url: queryURL,
     method: "GET",
@@ -20,13 +17,34 @@ $("#find").on("click", function(event) {
     }
   }).then(function(response) {
     for (i = 0; i < response.location_suggestions.length; i++) {
-      console.log(i);
       $("#holder").append(
-        "<p><button>" +
-          JSON.stringify(response.location_suggestions[i].name) +
+        "<p class = 'city'><button class = 'getCity' value = " + i+" >" +
+          JSON.stringify(response.location_suggestions[i].name).replace(/"/gi,"") +
           " </button></p>"
       );
     }
   });
-  // -----------------------------------------------------------------------
+});
+
+$("#holder").on("click", ".getCity",function(event){
+  
+  var cities = $("#cities-input").val();
+  var position = $(this).val();
+
+  var queryURL = "https://developers.zomato.com/api/v2.1/cities?q=" + cities;
+
+ 
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+    headers: {
+      "user-key": "b77bc3b6066b58fd02f4c97a8b61ee93"
+    }
+  }).then(function(response) {
+    var info = JSON.stringify(response.location_suggestions[position]);
+    $("#cities-input").replaceWith("<p>"+response.location_suggestions[position].name +"</p>")
+    $(".city").remove();
+    console.log(info);
+  });
+    
 });
