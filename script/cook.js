@@ -11,8 +11,6 @@ $(document).ready(function () {
         if ($("#cuisine-input").val())
             recipeSearchInput += "%20" + $("#cuisine-input").val();
 
-        console.log(recipeSearchInput);
-
         var queryURL = "https://food2fork.com/api/search?key=7cd47955dffd41deaec51a869580847a&q=" + recipeSearchInput;
 
         ///////////////////////////////////////////////////////
@@ -22,7 +20,6 @@ $(document).ready(function () {
         var targetUrl = queryURL;
 
         $.get(proxyUrl + targetUrl, function (response) {
-        console.log(response);
         var response1 = JSON.parse(response);
 
         for (var i = 0; i < 5; i++) {
@@ -32,7 +29,7 @@ $(document).ready(function () {
         var recipeSource = response1.recipes[i].publisher;  
 
         $("#recipeCard").append(
-           "<div class='recipe-container'><img class='recipePhoto' src='" + recipeImage + "'/>" + "<br/><a href ='" + recipeURL + "'target='_blank'>" + recipeTitle + "</a>" + "<br/> Recipe Source: " + recipeSource + "<br/></div>")
+           "<div class='row recipe-container'><div class='col-md-3'><img class=' recipePhoto' src='" + recipeImage + "'/></div>" + "<div class = 'col-md-9'><a href ='" + recipeURL + "'target='_blank'>" + recipeTitle + "</a><br>" + " Recipe Source: " + recipeSource + "</div></div>")
         };
 
         });           

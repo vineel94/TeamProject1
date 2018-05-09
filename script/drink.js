@@ -32,9 +32,9 @@ $(document).ready(function () {
           var barType = response1.success.results[i].Type;
 
           $("#barCard").append(
-            "<div class='bar-container'><img class='barPhoto'src='" + barImage + "'/>" + "<br/><a href ='" +  barURL + "'target='_blank'>" + barTitle + "</a><br/>" + "Address: " + barAddress + "<br/>" + "Website: "  + barWebsite + "<br/>" + "Hours: " + barHours + "<br/>" + "Venue Type: " + barType + "</div>"
-          )
+            "<div class='row bar-container'><div class='col-md-3'><img class='barPhoto'src='" + barImage + "'/></div>" + "<div class = 'col-md-9'><a href ='" +  barURL + "'target='_blank'>" + barTitle + "</a><br/>" + "Address: " + barAddress + "<br/>" + "Website: "  + barWebsite + "<br/>" + "Hours: " + barHours + "<br/>" + "Venue Type: " + barType + "</div></div>")
         };
       });
     });
   });
+
