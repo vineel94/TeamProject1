@@ -30,10 +30,12 @@ $(document).ready(function () {
             console.log(response1.recipes);
         var recipeTitle = response1.recipes[i].title;
         var recipeImage = response1.recipes[i].image_url;
-        var recipeURL = response1.recipes[i].source_url;     
-        //$("#recipeCard").empty();
+        var recipeURL = response1.recipes[i].source_url; 
+        var recipeSource = response1.recipes[i].publisher;  
+        
+
         $("#recipeCard").append(
-           "<div class='recipe-container'><img src='" + recipeImage + "'/><a href ='" +  recipeURL + "' target='_blank'>" + recipeTitle + "</a><br/></div>")
+           "<div class='recipe-container'><img class='recipePhoto' src='" + recipeImage + "'/>" + "<br/><a href ='" + recipeSource + recipeURL + "' target='_blank'>" + recipeTitle + "</a>" + "<br/> Recipe Source: " + recipeSource + "<br/></div>")
         };
 
         });           
