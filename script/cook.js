@@ -26,16 +26,13 @@ $(document).ready(function () {
         var response1 = JSON.parse(response);
 
         for (var i = 0; i < 5; i++) {
-            console.log(response1.count);
-            console.log(response1.recipes);
         var recipeTitle = response1.recipes[i].title;
         var recipeImage = response1.recipes[i].image_url;
         var recipeURL = response1.recipes[i].source_url; 
         var recipeSource = response1.recipes[i].publisher;  
-        
 
         $("#recipeCard").append(
-           "<div class='recipe-container'><img class='recipePhoto' src='" + recipeImage + "'/>" + "<br/><a href ='" + recipeSource + recipeURL + "' target='_blank'>" + recipeTitle + "</a>" + "<br/> Recipe Source: " + recipeSource + "<br/></div>")
+           "<div class='recipe-container'><img class='recipePhoto' src='" + recipeImage + "'/>" + "<br/><a href ='" + recipeURL + "'target='_blank'>" + recipeTitle + "</a>" + "<br/> Recipe Source: " + recipeSource + "<br/></div>")
         };
 
         });           
