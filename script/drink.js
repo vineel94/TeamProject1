@@ -5,12 +5,11 @@ $(document).ready(function () {
       event.preventDefault();
 
       // Here we grab the text from the input box
-      var city = $("#city-input").val();
-      var state = $("#state-input").val();
+      var city = $("#city-input").val() + "&state=" + $("#state-input").val();
+      
 
       // Here we construct our URL
-      var queryURL = "https://api.barzz.net/api/search?city=" + city + "&state=" + state +
-        "&user_key=8dd53e25d52b2fc98fb6a563b70feaaf";
+      var queryURL = "https://api.barzz.net/api/search?city=" + city + "&user_key=8dd53e25d52b2fc98fb6a563b70feaaf";
 
 
       var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
