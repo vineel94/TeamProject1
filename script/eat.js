@@ -1,5 +1,7 @@
 // This .on("click") function will trigger the AJAX Call
+var info = "";
 $("#find").on("click", function(event) {
+  $(".city").remove();
   // event.preventDefault() can be used to prevent an event's default behavior.
   // Here, it prevents the submit button from trying to submit a form when clicked
   event.preventDefault();
@@ -41,10 +43,9 @@ $("#holder").on("click", ".getCity",function(event){
       "user-key": "b77bc3b6066b58fd02f4c97a8b61ee93"
     }
   }).then(function(response) {
-    var info = JSON.stringify(response.location_suggestions[position]);
+    info = response.location_suggestions[position];
     $("#cities-input").replaceWith("<p>"+response.location_suggestions[position].name +"</p>")
     $(".city").remove();
-    console.log(info);
-  });
     
+  });
 });
